@@ -7,7 +7,6 @@ export const usePagination = () => {
 
    const toNextPage = useCallback(() => {
       setPage((prev) => (prev += 1));
-      console.log(page, pageCount);
 
       if (page > pageCount) {
          setIsFetching(true);
