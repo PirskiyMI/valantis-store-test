@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { getAuthKey } from '../helpers/get-auth-key';
+import { API_URL } from '../constants/api';
 
 export default class IdService {
    static async getIdList(data: { offset: number; limit: number }): Promise<string[] | undefined> {
@@ -7,7 +8,7 @@ export default class IdService {
       try {
          const response = await axios
             .post<{ result: string[] }>(
-               'https://api.valantis.store:40000/',
+               API_URL,
                {
                   action: 'get_ids',
                   params: data,
@@ -69,7 +70,7 @@ export default class IdService {
       try {
          const response = await axios
             .post<{ result: string[] }>(
-               'https://api.valantis.store:40000/',
+               API_URL,
                {
                   action: 'filter',
                   params,

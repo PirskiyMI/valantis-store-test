@@ -1,13 +1,14 @@
 import axios from 'axios';
 import { IProduct } from '../types/product';
 import { getAuthKey } from '../helpers/get-auth-key';
+import { API_URL } from '../constants/api';
 
 export default class ProductService {
    static async getProducts(ids: string[]): Promise<IProduct[] | undefined> {
       try {
          const response: IProduct[] = await axios
             .post<{ result: IProduct[] }>(
-               'https://api.valantis.store:40000/',
+               API_URL,
                {
                   action: 'get_items',
                   params: { ids },
