@@ -30,7 +30,7 @@ export default class IdService {
 
                const response = await axios
                   .post<{ result: string[] }>(
-                     'http://api.valantis.store:40000/',
+                     API_URL,
                      {
                         action: 'get_ids',
                         params: {
