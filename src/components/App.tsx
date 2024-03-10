@@ -68,11 +68,7 @@ export const App = () => {
    useEffect(() => {
       if (isFetching) {
          if (brand.value || price.value || product.value) {
-            const params = product.value
-               ? { product: product.value }
-               : price.value
-               ? { price: +price.value }
-               : { brand: brand.value };
+            const params = { product: product.value, brand: brand.value, price: +price.value };
             const fetchFilteredProducts = async () => {
                try {
                   const fetchedProducts = await IdService.getIdFilteredList(
