@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 .app {
    min-height: 100vh;
    display: grid;
    grid-template-columns: 1fr 3fr;
+   font-family: 'Roboto', sans-serif;
 }
 .aside {
    padding: 20px 0;

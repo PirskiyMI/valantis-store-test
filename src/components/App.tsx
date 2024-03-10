@@ -11,12 +11,13 @@ import { getCurrentProducts } from '../helpers/get-current-products';
 
 import { IProduct } from '../types/product';
 
-import { ProductList } from './product-list';
-import { SearchForm } from './search-form';
 import { Pagination } from './pagination';
+import { Preloader } from './preloader';
+import { ProductList } from './product-list';
+import { ProductNotFound } from './product-not-found';
+import { SearchForm } from './search-form';
 
 import '../styles/index.css';
-import { Preloader } from './preloader';
 
 export const App = () => {
    const {
@@ -120,6 +121,8 @@ export const App = () => {
                <div className="preloader">
                   <Preloader />
                </div>
+            ) : productList.length === 0 ? (
+               <ProductNotFound />
             ) : (
                <ProductList products={getCurrentProducts(productList, page)} />
             )}
