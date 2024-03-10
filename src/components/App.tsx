@@ -49,10 +49,10 @@ export const App = () => {
          {
             title: 'Вперед',
             onClick: toNextPage,
-            disabled: productList.length % 50 !== 0 && page === pageCount,
+            disabled: (productList.length % 50 !== 0 && page === pageCount) || isFetching,
          },
       ],
-      [productList, page, pageCount, toNextPage, toPrevPage],
+      [toPrevPage, page, toNextPage, productList.length, pageCount, isFetching],
    );
    const onSubmit = useCallback(
       (e: FormEvent<HTMLFormElement>) => {
