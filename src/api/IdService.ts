@@ -7,7 +7,7 @@ export default class IdService {
       try {
          const response = await axios
             .post<{ result: string[] }>(
-               'http://api.valantis.store:40000/',
+               'https://api.valantis.store:40000/',
                {
                   action: 'get_ids',
                   params: data,
@@ -69,7 +69,7 @@ export default class IdService {
       try {
          const response = await axios
             .post<{ result: string[] }>(
-               'http://api.valantis.store:40000/',
+               'https://api.valantis.store:40000/',
                {
                   action: 'filter',
                   params,

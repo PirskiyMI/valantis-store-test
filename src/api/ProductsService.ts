@@ -7,7 +7,7 @@ export default class ProductService {
       try {
          const response: IProduct[] = await axios
             .post<{ result: IProduct[] }>(
-               'http://api.valantis.store:40000/',
+               'https://api.valantis.store:40000/',
                {
                   action: 'get_items',
                   params: { ids },
