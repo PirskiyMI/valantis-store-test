@@ -6,11 +6,11 @@ export const ProductItem: FC<{ product: IProduct }> = ({
    product: { id, product, price, brand },
 }) => {
    return (
-      <div className={styles.item}>
+      <article className={styles.item}>
          <p className={styles.item__param}>{id}</p>
-         <p className={styles.item__param}>Продукт: {product}</p>
+         <h3 className={styles.item__param}>Продукт: {product}</h3>
          <p className={styles.item__param}>Бренд: {brand ? brand : '-'}</p>
          <p className={styles.item__param}>Цена: {price}</p>
-      </div>
+      </article>
    );
 };
